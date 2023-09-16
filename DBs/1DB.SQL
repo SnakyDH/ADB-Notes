@@ -22,17 +22,3 @@ VALUES (10, 'Juan', '2000-10-10', 1010),
     (40, 'Jose', '1995-12-25', 1020),
     (50, 'Felipe', '2000-12-30', 1010);
 
--- Queries
-
--- Using JOIN
-SELECT e.nombre 
-FROM empleado as e 
-JOIN departamento as d 
-WHERE d.nombre = 'Tesoreria';
-ON d.id = e.cod_dpto 
-
--- Using Cartecian Product
-SELECT empleado.nombre
-FROM empleado, departamento     
-WHERE departamento.id = cod_dpto 
-AND departamento.nombre = 'Tesoreria';
