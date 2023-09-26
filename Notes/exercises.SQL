@@ -46,3 +46,39 @@ FROM departamento as d
 LEFT JOIN empleado as e 
 ON d.id = e.cod_dpto 
 WHERE e.cod_dpto IS NULL;
+
+SELECT count(*) as cantidad
+FROM  empleado e 
+INNER JOIN departamento d
+ON (cod_dpto=d.id)
+WHERE d.nombre = 'Tesoreria';
+
+SELECT nombre, salario::integer
+FROM empleado;
+
+SELECT avg(salario::integer)
+FROM empleado e
+INNER JOIN departamento d ON(cod_dpto=d.id);
+
+SELECT sum(salario::integer)
+FROM empleado e
+INNER JOIN departamento d ON(cod_dpto=d.id);
+
+SELECT max(salario)::integer
+FROM empleado e
+INNER JOIN departamento d ON(cod_dpto=d.id);
+
+SELECT min(salario)::integer
+FROM empleado e
+INNER JOIN departamento d ON(cod_dpto=d.id);
+
+SELECT d.nombre, avg(salario)::integer
+FROM empleado e
+INNER JOIN departamento d ON(cod_dpto=d.id)
+GROUP BY d.id;
+
+SELECT d.nombre, avg(salario)::integer
+FROM empleado e
+INNER JOIN departamento d ON(cod_dpto=d.id)
+GROUP BY d.id
+HAVING d.id > 1010;

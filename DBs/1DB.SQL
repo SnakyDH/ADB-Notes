@@ -22,3 +22,22 @@ VALUES (10, 'Juan', '2000-10-10', 1010),
     (40, 'Jose', '1995-12-25', 1020),
     (50, 'Felipe', '2000-12-30', 1010);
 
+-- Agregar  la columna salario a empleado 
+ALTER TABLE empleado ADD COLUMN salario real;
+
+-- Update de los salarios si se tiene 1010 10000, 1020 1200
+UPDATE empleado
+SET salario = 1000000
+WHERE cod_dpto = 1010;
+
+UPDATE empleado
+SET salario = 1200000
+WHERE cod_dpto = 1020;
+
+UPDATE empleado
+SET salario = 1300000
+WHERE nombre = 'Maria';
+
+UPDATE empleado
+SET salario = 1500000
+WHERE nombre = 'Pepe';

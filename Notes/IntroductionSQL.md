@@ -36,7 +36,7 @@ Example:
 ```sql
   SELECT id, nombre
   FROM Table
-  ORDER BY id
+  ORDER BY id;
 ```
 
 - Using Index Column
@@ -44,10 +44,34 @@ Example:
 ```sql
 SELECT id, nombre
 FROM Table
-ORDER BY 1
+ORDER BY 1;
 ```
 ## Aggregation Funtions
 - `SUM()`
 - `AVG()`
 - `MAX()`
 - `MIN()`
+## LIKE
+All that early with 'J'
+```sql
+SELECT *
+FROM empleado
+WHERE nombre LIKE 'J%';
+```
+Only that early with 'J' and have other ONE character
+```sql
+SELECT *
+FROM empleado
+WHERE nombre LIKE 'J_';
+```
+## BETWEEN
+```sql
+SELECT *, salario::integer
+FROM empleado
+WHERE salario BETWEEN 1200000 AND 1700000;
+```
+```sql
+SELECT *
+FROM empleado
+WHERE fecha_nto BETWEEN '1990-01-01' AND '1995-12-31';
+```
