@@ -1,0 +1,33 @@
+# Views
+```sql
+SELECT * 
+FROM table1;
+```
+Generate a table 2 from table 1
+
+## Classification:
+- Common: 
+Result of a query
+It haven't own data 
+Only use for query
+Unique name in database
+Create a view for other view
+Can have updated data of the tables used
+`CREATE VIEW view_name AS SELECT * FROM table1;`
+`SELECT * FROM view_name;`
+I can use:
+`CREATE VIEW view_name AS SELECT * FROM table1;`
+`CREATE VIEW view_name (column1, column2) SELECT * FROM table1;`
+`DROP VIEW view_name;`
+`ALTER VIEW view_name AS SELECT * FROM table1;`
+`CREATE OR REPLACE VIEW view_name AS SELECT * FROM table1;`
+- Materialized:
+Same as common view but it have own data so it only can look at the data when it was created because is a copy of the data or a picture of the data
+`CREATE MATERIALIZED VIEW view_name AS SELECT * FROM table1;`
+`SELECT * FROM view_name;`
+I can use:
+`CREATE MATERIALIZED VIEW view_name AS SELECT * FROM table1;`
+`CREATE MATERIALIZED VIEW view_name (column1, column2) SELECT * FROM table1;`
+`DROP MATERIALIZED VIEW view_name;`
+`ALTER MATERIALIZED VIEW view_name AS SELECT * FROM table1;`
+`CREATE OR REPLACE MATERIALIZED VIEW view_name AS SELECT * FROM table1;`
