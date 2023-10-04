@@ -82,3 +82,13 @@ FROM empleado e
 INNER JOIN departamento d ON(cod_dpto=d.id)
 GROUP BY d.id
 HAVING d.id > 1010;
+
+-- Obtener el nombre y la fecha de nacimiento de los empleados 
+-- y el nombre del departamento al que pertenece. Los datos deben
+-- mostrarsen ordenados en forma descendente por el nombre de los empleados
+
+SELECT e.nombre, e.fecha_nto, d.nombre
+FROM empleado AS e
+JOIN departamento AS d
+ON (e.cod_dpto=d.id)
+ORDER BY e.nombre DESC;
