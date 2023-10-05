@@ -1,5 +1,24 @@
 # Introduction to SQL
 
+## Integrity Restrictions (Constraint)
+- PK
+- FK
+- NOT NULL
+- UNIQUE
+- CHECK
+- ### CREATE AUTOMATIC
+Use `CREATE TABLE`
+  - PRIMARY KEY
+  - FOREIGN KEY
+  - NOT NULL
+  - UNIQUE
+- ### CREATE MANUAL
+Use 
+```sql 
+ALTER TABLE
+ADD CONSTRAINT
+```
+
 ## Clause:
 
 SQL Command
