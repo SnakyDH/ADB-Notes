@@ -45,3 +45,9 @@ WHERE nombre = 'Pepe';
 INSERT INTO empleado (id, nombre, fecha_nto, cod_dpto) VALUES (60,'sandra','2001-12-30',1010),(70,'sebastian','2003-12-25',1010),(80,'Juan David','2002-10-25',1010);
 
 UPDATE empleado set nombre='Juan David'  WHERE id=80;
+
+UPDATE empleado SET cod_dpto=1020 WHERE id=50;
+
+DELETE 
+FROM empleado 
+WHERE nombre ='Juan';

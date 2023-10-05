@@ -87,8 +87,24 @@ HAVING d.id > 1010;
 -- y el nombre del departamento al que pertenece. Los datos deben
 -- mostrarsen ordenados en forma descendente por el nombre de los empleados
 
+CREATE VIEW dep_emp_v (empleado, fecha_nto, departamento)
+AS
 SELECT e.nombre, e.fecha_nto, d.nombre
 FROM empleado AS e
 JOIN departamento AS d
 ON (e.cod_dpto=d.id)
 ORDER BY e.nombre DESC;
+
+CREATE VIEW emp_tesoreria
+AS
+SELECT empleado, fecha_nto 
+FROM dep_emp_v 
+WHERE departamento = 'Tesoreria';  
+
+CREATE MATERIALIZED VIEW emp_tesoreria_vm
+AS
+SELECT empleado, fecha_nto 
+FROM dep_emp_v 
+WHERE departamento = 'Tesoreria';
+
+REFRESH MATERIALIZED VIEW emp_tesoreria_vm;
